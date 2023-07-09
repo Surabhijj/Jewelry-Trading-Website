@@ -1,0 +1,51 @@
+<%- include('../partials/header.ejs')%>
+<div class="content table-responsive m-auto ms-4">
+    <div>
+        <br><h2>Manage Trade here</h2><br>
+
+        <table class="table  table-bordered table-stripped " style="width: 80%;">
+
+            <thead>
+                <tr>
+                <th>Product</th>
+                <th>Trade Product</th>
+                <th>Manage Trade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td>
+                    <%=trades.item_toTrade_id.item_name%><br>
+                    <a target="_blank" href="">
+                        <img src="/images/<%=trades.item_toTrade_id.item_image%>" alt="<%=trades.item_toTrade_id.item_name%>" width="200" height="200">
+                          </a>
+                </td>
+                <td>
+                    <%=trades.item_tradedWith_id.item_name%><br>
+                    <a target="_blank" href="">
+                        <img src="/images/<%=trades.item_tradedWith_id.item_image%>" alt="<%=trades.item_tradedWith_id.item_name%>" width="200" height="200">
+                          </a>
+                </td>
+                <td>
+
+                    <% if(trades.user_id == current_user) { %>
+                        <form>
+                            <button type="submit" formmethod="POST" formaction="/trades/manageTrade/<%=trades._id%>?_method=DELETE">Cancel Trade</button>
+                        </form>
+                        <% } else { %>
+                        <form>
+                            <button type="submit" formmethod="POST" formaction="/trades/manageTrade/<%=trades._id%>">Accept Trade</button>
+                            <button type="submit" formmethod="POST" formaction="/trades/manageTrade/<%=trades._id%>?_method=DELETE">Reject Trade</button>
+                        </form>
+                    
+                        
+                    <% } %>
+                </td>
+            </tbody>
+    
+            </table>
+    </div>
+</div>
+<div class=" foot fixed-bottom ">
+
+<%- include('../partials/footer.ejs')%>
+

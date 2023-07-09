@@ -1,0 +1,74 @@
+<%- include('../partials/header.ejs')%>
+
+    <main class="main_class">
+      <div class="main-content-container ms-5 mt-3">
+        <div class="container">
+            <h1><%=jewelry.item_name%>Details</h1>
+            <div class="float-end">
+                <!-- <a class="btn btn-primary" href="<%=jewelry.item_id%>/edit">UPDATE</a>  -->
+                <!-- <a class="btn btn-primary" href="<%=jewelry.item_id%>/delete">DELETE</a>  -->
+                <%if(user == jewelry.item_created_by){%>
+                <form>
+                  <button type="submit" formmethod = 'GET' formaction = '/trades/<%=jewelry._id%>/edit'>UPDATE</button>
+                  <button type="submit" formmethod = "post" formaction = '/trades/<%=jewelry._id%>?_method=DELETE'>DELETE</button>
+                </form>
+                <%}else{%>
+                <div>
+                  <%  var btnName = "WATCH";
+                      var btnAction = "/trades/"+jewelry._id+"/watch";
+                      var hidden =0 ;
+                      if(watchListData != null && user!= null){
+                        btnName = "UNWATCH"
+                        btnAction = "/trades/"+watchListData._id+"/unwatch";
+                      }
+                      if(jewelry.item_status != 1){
+                         hidden = 1;
+                      }%>
+                      
+                  <form>
+                    <input value="<%= jewelry.item_created_by %>" name="itemCreatedBy" hidden>
+      
+                    <button type="submit" formmethod = 'post' formaction = '<%= btnAction %>'><%=btnName%></button>
+                    <%if (hidden == 0){%>
+                    <button type="submit" formmethod = 'post' formaction = '/trades/selectTradeItem/<%=jewelry._id%>'>TRADE</button>
+                   <% }%>
+                  </form>
+                <%}%>
+              </div>
+
+            </div><br><br><br>
+            <div class="row">
+              <div class="col-md-5">
+                <img src="/images/<%=jewelry.item_image%>" class="img-fluid" alt="Trade Item">
+              </div>
+              <div class="col-md-7">
+                
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Detail</th>
+                        <th>Information</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var item in jewelry.item_details[0]){%>
+                            <tr>
+                                <td><%= item %></td>
+                                <td><%= jewelry.item_details[0][item]%></td>
+                            </tr>
+                        <%}%>
+                      
+                      
+                    </tbody>
+                  </table>
+                </div> 
+                </div>        
+        </div> 
+      </div>
+    </main>
+    <%- include('../partials/footer.ejs')%>
+
+
+
+    
+   

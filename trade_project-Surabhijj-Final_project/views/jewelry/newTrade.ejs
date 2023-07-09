@@ -1,0 +1,85 @@
+<%- include('../partials/header.ejs')%>
+
+    <main class="main_class">
+      <!-- <div class="main-content-container ms-5 mt-3"> -->
+        <div class="container">
+            <h1>New Trade</h1>
+           
+            <form action="/trades" method="post">
+
+              <div class="row">
+              <div class=" col-lg-6">
+                <div class="form-group">
+                  <label for="category">Item_Category</label>
+                  <input type="text" class="form-control"  id="category" name="item_category" required>
+                </div>
+              </div>
+
+              <div class=" col-lg-6">
+              <div class="form-group">
+                <label for="title">Item_Name</label>
+                <input type="text" class="form-control" id="title" name="item_name" required>
+              </div>
+              </div>
+             
+              <div class="col-lg-6">
+                <div class="form-group ">
+                  <label for="details">Carat</label>
+                  <textarea class="form-control" id="Carat" name="item_details[carat]"required></textarea>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label for="details">Shape</label>
+                <textarea class="form-control" id="Shape" name="item_details[shape]"required></textarea>
+              </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label for="details">Certification</label>
+                <textarea class="form-control" id="Certification" name="item_details[Certification]"required></textarea>
+              </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label for="details">Clarity</label>
+                <textarea class="form-control" id="Clarity" name="item_details[Clarity]"required></textarea>
+              </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label for="details">Price</label>
+                <textarea class="form-control" id="Price" name="item_details[Price]"required></textarea>
+              </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label for="details">Color</label>
+                <textarea class="form-control" id="Color" name="item_details[Color]"required></textarea>
+              </div>
+              </div><br>
+
+              <div class=" col-lg-6">
+                <button class=" btn btn-info" type=" submit">Ceate Trade
+
+                </button>
+
+              </div>
+             
+              <!-- <a class="btn btn-primary" href="trades">Create Trade</a> -->
+          </div>
+
+            </form>
+          <!-- </div> -->
+      </div>
+    </main>    
+    <div class=" foot fixed-bottom ">
+
+      <%- include('../partials/footer.ejs')%>
+
+    

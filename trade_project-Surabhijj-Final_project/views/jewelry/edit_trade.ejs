@@ -1,0 +1,82 @@
+<%- include('../partials/header.ejs')%>
+
+    <main class="main_class">
+      <!-- <div class="main-content-container ms-5 mt-3"> -->
+        <div class="container">
+           
+            <form action="/trades/<%=jewelry.item_id%>?_method=PUT" method="post" >
+
+              <div class="row">
+              <div class=" col-lg-6">
+                <div class="form-group">
+                  <label>Item_Category</label>
+                  <input type="text" class="form-control" id="category" name="item_category" value="<%=jewelry.item_category%>" required>
+                </div>
+              </div>
+
+              <div class=" col-lg-6">
+              <div class="form-group">
+                <label>Item_Name</label>
+                <input type="text" class="form-control" id="title" name="item_name" value="<%=jewelry.item_name%>" required>
+              </div>
+              </div>
+             
+              <div class="col-lg-6">
+                <div class="form-group ">
+                  <label>Carat</label>
+                  <textarea class="form-control" id="Carat" name="item_details[carat]" required><%=jewelry.item_details[0].carat%></textarea>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label>Shape</label>
+                <textarea class="form-control" id="Shape" name="item_details[shape]" required><%=jewelry.item_details[0].shape%></textarea>
+              </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label>Certification</label>
+                <textarea class="form-control" id="Certification" name="item_details[Certification]" required><%=jewelry.item_details[0].Certification%></textarea>
+              </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label>Clarity</label>
+                <textarea class="form-control" id="Clarity" name="item_details[Clarity]" required><%=jewelry.item_details[0].Clarity%></textarea>
+              </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label>Price</label>
+                <textarea class="form-control" id="Price" name="item_details[Price]" required><%=jewelry.item_details[0].Price%></textarea>
+              </div>
+              </div>
+
+              <div class="col-lg-6">
+              <div class="form-group">
+                <label for="details">Color</label>
+                <textarea class="form-control" id="Color" name="item_details[Color]" required><%=jewelry.item_details[0].Color%></textarea>
+              </div>
+              </div><br>
+
+              <div class=" col-lg-6">
+                <button type="submit" formmethod = "post" formaction = '/trades/<%=jewelry._id%>?_method=PUT'>UPDATE</button>
+                <button type="submit" formmethod = "post" formaction = '/trades/<%=jewelry._id%>'>CANCEL</button>
+              </div>
+             
+              <!-- <a class="btn btn-primary" href="trades">Create Trade</a> -->
+          </div>
+
+            </form>
+          <!-- </div> -->
+      </div>
+    </main>    
+    <div class=" foot fixed-bottom ">
+
+      <%- include('../partials/footer.ejs')%>
+
+    

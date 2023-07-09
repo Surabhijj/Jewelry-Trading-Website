@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs')%>
+<div class="container main-container"></div>
+    <div class = "content">
+       <%if(temp.length){ %>
+
+
+        <%var val = JSON.parse(temp);%>
+        <%for( var p in val.itemsByCategory){%>
+            
+            <div class="row">
+            <h2><%=p%></h2>
+
+            <%val.itemsByCategory[p].forEach(element => {%>
+                <div class="gallery col-2">
+                <a target="_blank" href="">
+                <img src="/images/<%=element.item_image%>" alt="<%=element.item_name%>" width="200" height="200">
+                  </a>
+                  <div class="desc"><%=element.item_name%><br>
+                  <a class="btn btn-primary" href="trades/<%=element._id%>">DETAILS</a> 
+                  </div>
+                </div>
+            
+                
+            <%});%>
+            </div>
+        <%}
+       }else{%>
+        <p>There are no jewelries to display</p>
+       <%}%>
+    </div>
+</div>
+
+    <%- include('../partials/footer.ejs')%>

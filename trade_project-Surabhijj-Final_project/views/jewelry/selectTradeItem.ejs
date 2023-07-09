@@ -1,0 +1,59 @@
+<%- include('../partials/header.ejs')%>
+<div class="content table-responsive m-auto ms-4">
+    <div>
+
+        <form>
+
+        <table class="table  table-bordered table-stripped " style="width: 80%;">
+            <thead >
+                <tr>
+                    <th>Select</th>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%if(jewels.length){%>
+                    <h3>Select the Item to Trade</h3><br>
+                    <%jewels.forEach(item=>{%>
+                    <tr>
+                        <td>
+                            <div class="radio">
+                                 <label><input type="radio" name="item_toTrade_id" value="<%=item._id%>" required></label>
+                            </div>
+                       </td>
+                        <td><a target="_blank" href="">
+                            <img src="/images/<%=item.item_image%>" alt="<%=item.item_name%>" width="200" height="200">
+                              </a></td>
+                        <td><%=item.item_name%></td>
+                        <td><%=item.item_category%></td>
+                        
+                    </tr>
+    
+                <%})%>
+                   <% }else{%>
+                    <tr>
+                        <td colspan="3">No Products added</td>
+                    </tr>
+                   <% }%>
+
+                
+            </tbody>
+            
+            </table>
+            <div class=" col-lg-6">
+                <button  class="btn btn-primary" type="submit" formmethod = "post" formaction = '/trades/selectTradeItem'>SUBMIT</button>
+                <button class="btn btn-primary" type="submit" formmethod = "get" formaction = '/trades/<%=jewelry_id%>'>CANCEL</button>
+              </div>
+              <input type="text" class="form-control" name="item_tradedWith_id" value="<%=jewelry_id%>" hidden>
+              <input type="text" class="form-control" name="item_tradedWith_userId" value="<%=jewelry_createdByUser%>" hidden>
+                
+            </form>
+
+            
+    </div>
+    
+</div>
+
+<%- include('../partials/footer.ejs')%>

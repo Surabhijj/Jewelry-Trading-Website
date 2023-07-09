@@ -1,0 +1,197 @@
+[{
+  "_id": {
+    "$oid": "6445e7b675b28f3a3fb82f78"
+  },
+  "item_details": [
+    {
+      "carat": "1.5 carat",
+      "shape": "heart cut",
+      "Certification": "GIA",
+      "Clarity": "SI1",
+      "Price": "$1000",
+      "Color": "D"
+    }
+  ],
+  "item_category": "Gold_Jewelry",
+  "item_name": "Gold_Ring",
+  "item_image": "gold_ring.jpeg",
+  "item_created_by": {
+    "$oid": "6445e71e75b28f3a3fb82f77"
+  },
+  "createdAt": {
+    "$date": "2023-04-24T02:21:42.418Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T18:42:40.786Z"
+  },
+  "__v": 0,
+  "item_status": "1"
+},{
+  "_id": {
+    "$oid": "6445e81275b28f3a3fb82f79"
+  },
+  "item_details": [
+    {
+      "carat": "2 carat",
+      "shape": "Round",
+      "Certification": "GIA",
+      "Clarity": "SI1",
+      "Price": "$2000",
+      "Color": "D"
+    }
+  ],
+  "item_category": "Gold_Jewelry",
+  "item_name": "Gold_Necklace",
+  "item_image": "gold_necklace.jpeg",
+  "item_created_by": {
+    "$oid": "6445e71e75b28f3a3fb82f77"
+  },
+  "createdAt": {
+    "$date": "2023-04-24T02:23:14.746Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T19:05:27.917Z"
+  },
+  "__v": 0,
+  "item_status": "3"
+},{
+  "_id": {
+    "$oid": "6445e83c75b28f3a3fb82f7a"
+  },
+  "item_details": [
+    {
+      "carat": "2.5 carat",
+      "shape": "Heart cut",
+      "Certification": "GIA",
+      "Clarity": "SI1",
+      "Price": "$3000",
+      "Color": "D"
+    }
+  ],
+  "item_category": "Gold_Jewelry",
+  "item_name": "Gold_Earrings",
+  "item_image": "gold_earring.jpg",
+  "item_created_by": {
+    "$oid": "6445e71e75b28f3a3fb82f77"
+  },
+  "createdAt": {
+    "$date": "2023-04-24T02:23:56.542Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T18:35:40.888Z"
+  },
+  "__v": 0,
+  "item_status": "1"
+},{
+  "_id": {
+    "$oid": "6445e88675b28f3a3fb82f7d"
+  },
+  "item_details": [
+    {
+      "carat": "3.5 carat",
+      "shape": "heart cut",
+      "Certification": "GIA",
+      "Clarity": "SI1",
+      "Price": "$4000",
+      "Color": "D"
+    }
+  ],
+  "item_category": "Diamond_Jewelry",
+  "item_name": "Diamond_Ring",
+  "item_image": "diamond_ring.jpeg",
+  "item_created_by": {
+    "$oid": "6445e85975b28f3a3fb82f7c"
+  },
+  "createdAt": {
+    "$date": "2023-04-24T02:25:10.942Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T19:05:27.917Z"
+  },
+  "__v": 0,
+  "item_status": "3"
+},{
+  "_id": {
+    "$oid": "6445e8b075b28f3a3fb82f7e"
+  },
+  "item_details": [
+    {
+      "carat": "3 carat",
+      "shape": "heart cut",
+      "Certification": "GIA",
+      "Clarity": "SI1",
+      "Price": "$4000",
+      "Color": "D"
+    }
+  ],
+  "item_category": "Diamond_Jewelry",
+  "item_name": "Diamond_Necklace",
+  "item_image": "diamond_necklace.jpeg",
+  "item_created_by": {
+    "$oid": "6445e85975b28f3a3fb82f7c"
+  },
+  "createdAt": {
+    "$date": "2023-04-24T02:25:52.362Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T19:32:44.560Z"
+  },
+  "__v": 0,
+  "item_status": "1"
+},{
+  "_id": {
+    "$oid": "6445e8d275b28f3a3fb82f7f"
+  },
+  "item_details": [
+    {
+      "carat": "1 carat",
+      "shape": "round cut",
+      "Certification": "GIA",
+      "Clarity": "SI1",
+      "Price": "$6000",
+      "Color": "D"
+    }
+  ],
+  "item_category": "Diamond_Jewelry",
+  "item_name": "Diamond_Earrings",
+  "item_image": "diamond_earring.jpeg",
+  "item_created_by": {
+    "$oid": "6445e85975b28f3a3fb82f7c"
+  },
+  "createdAt": {
+    "$date": "2023-04-24T02:26:26.408Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T18:34:08.357Z"
+  },
+  "__v": 0,
+  "item_status": "1"
+},{
+  "_id": {
+    "$oid": "645d487619980ed3b14fbb88"
+  },
+  "item_details": [
+    {
+      "carat": "drjn",
+      "shape": "dg",
+      "Certification": "gh",
+      "Clarity": "dgn",
+      "Price": "dgh",
+      "Color": "g"
+    }
+  ],
+  "item_category": "a",
+  "item_name": "dgh",
+  "item_image": "default_image.png",
+  "item_status": "1",
+  "item_created_by": {
+    "$oid": "6445e85975b28f3a3fb82f7c"
+  },
+  "createdAt": {
+    "$date": "2023-05-11T19:56:38.426Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T20:00:52.543Z"
+  },
+  "__v": 0
+}]

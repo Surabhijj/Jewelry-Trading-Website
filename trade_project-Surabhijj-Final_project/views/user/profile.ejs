@@ -1,0 +1,153 @@
+<%- include('../partials/header.ejs')%>
+<div class="content table-responsive m-auto ms-4">
+    <br><h2>Welcome, <%=user.firstName%></h2><br>
+    <div>
+        <table class="table  table-bordered table-stripped " style="width: 80%;">
+            <thead >
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <%if(jewels.length){%>
+                    <h3>You have Created following Trades</h3><br>
+                    <%jewels.forEach(item=>{
+                        var status = "AVAILABLE";
+                        if(item.item_status == 3) status = "OFFER ACCEPTED";
+                        else if(item.item_status == 2) status = "OFFER PENDING"; 
+                        else if(item.item_status == 4) status = "OFFER REJECTED"; 
+                %>
+                    <tr>
+                        <td><%=item.item_name%></td>
+                        <td><%=item.item_category%></td>
+                        <td><%=status%></td>
+                        <td> <form>
+                            <button type="submit" formmethod = 'GET' formaction = '/trades/<%=item._id%>/edit'>Update</button>
+                            <button type="submit" formmethod = "post" formaction = '/trades/<%=item._id%>?_method=DELETE'>Delete</button>
+                            <%if(item.item_status==2){%>
+
+                                <%if(tradeData.length){%>
+
+                                    <%tradeData.forEach(val=>{%>
+                                        
+
+                                     <% if(val.item_toTrade_id._id.equals(item._id) || val.item_tradedWith_id._id.equals(item._id)){%>
+                                        <button type="submit" formmethod = 'GET' formaction = '/trades/manageTrade/<%=val._id%>'>MANAGE OFFER</button>
+                            <%}})
+                        }}%>
+
+                        </form></td>
+                    </tr>
+    
+                <%})%>
+                   <% }else{%>
+                    <tr>
+                        <td colspan="3">No Products added</td>
+                    </tr>
+                   <% }%>
+
+                
+            </tbody>
+    
+            </table>
+    </div>
+</div>
+
+<div class="content table-responsive m-auto ms-4">
+<table class="table  table-bordered table-stripped " style="width: 80%;">
+    <thead >
+        <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Status</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h3>Watch List</h3><br>
+        <%if(watchListData.length){%>
+            <%watchListData.forEach(item=>{
+                var status = "AVAILABLE";
+                if(item.trade_item_id.item_status == 3) status = "OFFER ACCEPTED";
+                else if(item.trade_item_id.item_status == 2) status = "OFFER PENDING"; 
+                else if(item.trade_item_id.item_status == 4) status = "OFFER REJECTED"; %>
+                
+            <tr>
+                <td><%=item.trade_item_id.item_name%></td>
+                <td><%=item.trade_item_id.item_category%></td>
+                <td><%=status%></td>
+
+                <td> <form>
+                    <button type="submit" formmethod = 'post' formaction = '/trades/<%=item._id%>/unwatch'>UNWATCH</button>
+                    
+
+                </form></td>
+            </tr>
+
+        <%})%>
+        <% }else{%>
+            <tr>
+                <td colspan="3">No Products added</td>
+            </tr>
+           <% }%>
+
+        
+    </tbody>
+
+    </table>
+</div>
+</div>
+</div>
+
+<div class="content table-responsive m-auto ms-4">
+<table class="table  table-bordered table-stripped " style="width: 80%;">
+    <thead >
+        <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Status</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h3>Trade List</h3><br>
+        <%if(tradeData.length){%>
+            <%tradeData.forEach(item=>{
+                if(id==item.user_id){
+                var status = "OFFER PENDING";
+                if(item.item_status == 3) status = "OFFER ACCEPTED";
+                else if(item.item_status == 4) status = "OFFER REJECTED"; 
+                %>
+            <tr>
+                <td><%=item.item_toTrade_id.item_name%></td>
+                <td><%=item.item_toTrade_id.item_category%></td>
+                <td><%=status%></td>
+
+                <td> <form>
+                    <button type="submit" formmethod = 'GET' formaction = '/trades/manageTrade/<%=item._id%>'>CANCEL OFFER</button>
+                </form></td>
+            </tr>
+
+        <%}})%>
+        <% }else{%>
+            <tr>
+                <td colspan="3">No Products added</td>
+            </tr>
+           <% }%>
+
+        
+    </tbody>
+
+    </table>
+</div>
+</div>
+</div>
+<%- include('../partials/footer.ejs')%>
+
+
+
